@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-// import HomedBeast  from './HomedBeast'
+import HomedBeast from './HomedBeast'
+import data from './data.json'
+
 
 
 
@@ -7,17 +9,24 @@ class Main extends Component {
     render() {
        
         return (
-            <>
-             <h2>{this.props.title}</h2>
-             <img src={this.props.image_url} alt={this.props.keyword}/>
+            <div>
+            {
+                this.props.data.map(item=>{
+                    return(
+                        <HomedBeast
+                        title ={item.title}
+                        img_url={item.image_url}
+                        description ={item.description}
+                        mofal ={this.props.selectedmodal}
+                        horns={this.props.horns}
+                    />
+                    )
+                })
+            }
 
-             <p > number of horns: {this.props.horns} </p>
-             <p> {this.props.description}</p>
 
 
-
-
-            </>
+            </div>
         )
     }
 }
