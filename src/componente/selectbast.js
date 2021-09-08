@@ -6,7 +6,7 @@ import {Modal,Button,Card} from 'react-bootstrap';
 
 class selectbast extends Component {
     render() {
-
+console.log(this.props)
         return (
             <>
                 {/* <Button variant="primary" onClick={this.props.handleShow}>
@@ -28,9 +28,9 @@ class selectbast extends Component {
                     </Modal.Footer>
                 </Modal> */}
 
-<Modal Show={this.props.showmodle}>
+<Modal show={this.props.showmodle}>
                     <Modal.Header>
-                        <Modal.Title>{this.props.datamodles}</Modal.Title>
+                        <Modal.Title>{this.props.title}</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
 

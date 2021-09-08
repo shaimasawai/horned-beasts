@@ -56,7 +56,7 @@ import {Card,Button} from 'react-bootstrap';
                           <Card.Title > {this.props.title}</Card.Title>
                           <Card.Text>{this.props.description}</Card.Text>
                       </Card.Body>
-                      <Button variant="info">💖 {this.props.vote}</Button>
+                      <Button variant="info">💖 {this.state.vote}</Button>
                       <Button onClick={this.clickpuchtr} variant="danger">  click Me</Button>
 
                       </Card>
