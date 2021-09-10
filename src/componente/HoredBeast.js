@@ -10,14 +10,6 @@ class HoredBeast extends Component {
       vote: 0,
     };
   }
-  //  likesandimg =()=>{
-  //      this.setState(
-  //          {
-  //              NUMBERIMG:this.state.NUMBERIMG+1,
-  //              likes: this.state.likes+1,
-  //          }
-  //      )
-  //  }
 
   clickimg = () => {
     this.setState({
@@ -26,11 +18,7 @@ class HoredBeast extends Component {
     });
   };
   clickpuchtr = () => {
-    this.props.modle({
-      title: this.props.title,
-      image_url: this.props.image_url,
-      description: this.props.description,
-    });
+    this.props.selected(this.props.title);
   };
 
   render() {
