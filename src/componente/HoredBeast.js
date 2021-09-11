@@ -17,9 +17,9 @@ class HoredBeast extends Component {
       vote: this.state.vote + 1,
     });
   };
-  clickpuchtr = () => {
-    this.props.selected(this.props.title);
-  };
+  // clickpuchtr = () => {
+  //   this.props.selected(this.props.title);
+  // };
 
   render() {
     return (
@@ -39,7 +39,16 @@ class HoredBeast extends Component {
               <Card.Text>{this.props.description}</Card.Text>
             </Card.Body>
             <Button variant="info">💖 {this.state.vote}</Button>
-            <Button onClick={this.clickpuchtr} variant="danger">
+            <Button
+              onClick={() =>
+                this.props.handelOPen(
+                  this.props.title,
+                  this.props.description,
+                  this.props.image_url
+                )
+              }
+              variant="danger"
+            >
               {" "}
               click Me
             </Button>

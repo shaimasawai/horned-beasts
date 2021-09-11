@@ -9,7 +9,7 @@ class MyForm extends Component {
         <Form>
           <Form.Control
             className="select"
-            onChange={this.props.hornsFunc}
+            onChange={(e) => this.props.hornsFunc(e)}
             as="select"
             size="lg"
           >
