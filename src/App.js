@@ -15,18 +15,38 @@ class App extends Component {
       datamodle: {},
     };
   }
-  handleShow = (data) => {
+  handleShow = (horns) => {
     this.setState({
-      show: true,
-      datamodle: data,
-    });
-  };
-  handleClose = () => {
-    this.setState({
-      show: false,
+      animalData: horns,
     });
   };
 
+  selected = (title) => {
+    // eslint-disable-next-line array-callback-return
+    let findfAnimal = Databeast.find((element) => {
+      if (element.title === title) {
+        return element;
+      }
+    });
+    this.setState({
+      show: true,
+      datamodle: findfAnimal,
+    });
+  };
+
+  handleClose = (title) => {
+    // eslint-disable-next-line array-callback-return
+    let findanimal = Databeast.find((element) => {
+      if (element.title === title) {
+        return element;
+      }
+    });
+
+    this.setState({
+      show: true,
+      datamodel: findanimal,
+    });
+  };
   render() {
     return (
       <>

@@ -6,6 +6,7 @@ class selectbast extends Component {
     console.log(this.props);
     return (
       <>
+
         {/* <Button variant="primary" onClick={this.props.handleShow}>
                     Launch demo modal
                 </Button>------
@@ -25,6 +26,7 @@ class selectbast extends Component {
                     </Modal.Footer>
                 </Modal> */}
 
+ main
         <Modal show={this.props.showmodle}>
           <Modal.Header>
             <Modal.Title>{this.props.datamodle.title}</Modal.Title>
