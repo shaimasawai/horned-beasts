@@ -8,7 +8,7 @@ class selectbast extends Component {
       <>
         {/* <Button variant="primary" onClick={this.props.handleShow}>
                     Launch demo modal
-                </Button>
+                </Button>------
 
                 <Modal show={this.props.showmodle} onHide={this.props.handleClose}>
                     <Modal.Header closeButton>
