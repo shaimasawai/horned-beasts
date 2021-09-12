@@ -29,21 +29,18 @@ class selectbast extends Component {
  main
         <Modal show={this.props.showmodle}>
           <Modal.Header>
-            <Modal.Title>{this.props.datamodle.title}</Modal.Title>
+            <Modal.Title>{this.props.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Card>
-              <Card.Img
-                src={this.props.datamodle.image_url}
-                alt={this.props.title}
-              />
+              <Card.Img src={this.props.image_url} alt={this.props.title} />
               <Card.Body>
-                <Card.Text>{this.props.datamodle.description}</Card.Text>
+                <Card.Text>{this.props.description}</Card.Text>
               </Card.Body>
             </Card>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.props.exit}>Close</Button>
+            <Button onClick={this.props.handleClose}>Close</Button>
           </Modal.Footer>
         </Modal>
       </>

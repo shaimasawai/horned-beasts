@@ -5,6 +5,7 @@ import Footer from "./componente/Footer";
 import Databeast from "./componente/data.json";
 import Selectbast from "./componente/selectbast";
 import "bootstrap/dist/css/bootstrap.min.css";
+import MyForm from "./componente/MyForm";
 
 class App extends Component {
   constructor(props) {
@@ -13,6 +14,11 @@ class App extends Component {
       dataHorne: Databeast,
       show: false,
       datamodle: {},
+      Databeast: Databeast,
+      resultdata: Databeast,
+      title: "",
+      description: "",
+      image_url: "",
     };
   }
   handleShow = (horns) => {
@@ -34,28 +40,52 @@ class App extends Component {
     });
   };
 
-  handleClose = (title) => {
-    // eslint-disable-next-line array-callback-return
-    let findanimal = Databeast.find((element) => {
-      if (element.title === title) {
-        return element;
-      }
+  handleClose = () => {
+    this.setState({
+      show: false,
     });
+  };
 
+  handelOPen = (title, description, image_url) => {
     this.setState({
       show: true,
-      datamodel: findanimal,
+      title: title,
+      description: description,
+      image_url: image_url,
+    });
+  };
+
+  hornsFunc = (event) => {
+    let numOfHorns = event.target.options[event.target.selectedIndex].text;
+
+    if (event.target.value > 0) {
+      var resulttedData = Databeast.filter((HoredBeast) => {
+        return HoredBeast.horns === numOfHorns;
+      });
+    } else {
+      // resulttedData = Databeast;
+    }
+    this.setState({
+      resultdata: resulttedData,
     });
   };
   render() {
     return (
       <>
         <Header />
-        <Main chooesmodle={this.handleShow} data={this.dataHorne} />
+        <MyForm hornsFunc={this.hornsFunc} />
+        <Main
+          chooesmodle={this.handleShow}
+          data={this.dataHorne}
+          resultdata={this.state.resultdata}
+          handelOPen={this.handelOPen}
+        />
         <Selectbast
-          exit={this.handleClose}
+          handleClose={this.handleClose}
           showmodle={this.state.show}
-          datamodle={this.state.datamodle}
+          title={this.state.title}
+          description={this.state.description}
+          image_url={this.state.image_url}
         />
 
         <Footer />
